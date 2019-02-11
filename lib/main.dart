@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lab01/ui/detail_screen.dart';
+import 'package:lab01/ui/first_screen.dart';
+import 'package:lab01/ui/second_screen.dart';
+import './ui/my_custom_form.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,10 +15,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(),
+      // home: MyHomePage(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => MyCustomForm(),
+        "/second": (context) => SecondScreen(),
+        "/detail": (context) => DetailScreen(),
+      },
     );
   }
 }
+
+
+
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -83,6 +96,8 @@ class FirstPageState extends State<FirstPage> {
     );
   }
 }
+
+
 
 // class MyHomePage extends StatelessWidget {
 //   int count = 0;
